@@ -77,7 +77,9 @@ export default function TestimonialsSection() {
 
   // Auto-rotate every 7 seconds
   useEffect(() => {
-    timeoutRef.current && clearTimeout(timeoutRef.current);
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
     timeoutRef.current = setTimeout(() => {
       setActive(a => (a + 1) % testimonials.length);
     }, 7000);
