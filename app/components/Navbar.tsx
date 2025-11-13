@@ -27,9 +27,9 @@ export default function Navbar() {
     <nav className="navbar-outer">
       <div className="navbar-inner">
         {/* Logo Section */}
-        <div className="navbar-logo-wrap">
+        <a href="/" className="navbar-logo-wrap" onClick={closeMenu}>
           <Image src="/1.png" alt="SLV Logo" width={56} height={56} className="navbar-logo" priority />
-        </div>
+        </a>
         {/* Hamburger Menu Button - Mobile Only */}
         {!isMenuOpen && (
           <button className="navbar-hamburger" onClick={toggleMenu} aria-label="Toggle menu">
@@ -58,16 +58,27 @@ export default function Navbar() {
             CONTACT
           </a>
           {/* CTA Button inside mobile menu */}
-          <button className="navbar-cta-mobile" onClick={closeMenu}>
+          <a 
+            href="https://wa.me/919901389430?text=Hello%2C%20I%20would%20like%20to%20get%20in%20touch%20with%20you"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="navbar-cta-mobile"
+            onClick={closeMenu}
+          >
             Get In Touch <span className="cta-arrow">→</span>
-          </button>
+          </a>
         </div>
         {/* Nav Right: CTA Button - Desktop Only */}
         <div className={`navbar-side-wrap ${isMenuOpen ? 'mobile-open' : ''}`}>
           {/* CTA Button */}
-          <button className="navbar-cta" onClick={closeMenu}>
+          <a 
+            href="https://wa.me/919901389430?text=Hello%2C%20I%20would%20like%20to%20get%20in%20touch%20with%20you"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="navbar-cta"
+          >
             Get In Touch <span className="cta-arrow">→</span>
-          </button>
+          </a>
         </div>
       </div>
       {/* Mobile Menu Overlay */}
@@ -111,6 +122,12 @@ export default function Navbar() {
           align-items: center;
           min-width: auto;
           flex-shrink: 0;
+          cursor: pointer;
+          text-decoration: none;
+          transition: opacity 0.2s;
+        }
+        .navbar-logo-wrap:hover {
+          opacity: 0.8;
         }
         @media (min-width: 768px) {
           .navbar-logo-wrap {

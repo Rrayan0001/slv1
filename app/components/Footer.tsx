@@ -1,9 +1,19 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 export default function Footer() {
+  const [showMessage, setShowMessage] = useState(false);
+
+  const handleSubscribe = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setShowMessage(true);
+    // Hide message after 3 seconds
+    setTimeout(() => {
+      setShowMessage(false);
+    }, 3000);
+  };
   return (
     <footer className="footer-bg">
       <div className="footer-glass">
@@ -28,7 +38,7 @@ export default function Footer() {
                 <span style={{ color: "#fff" }}>Our Newsletter</span>
               </span>
             </div>
-            <form className="footer-newsletter-form" onSubmit={e => e.preventDefault()}>
+            <form className="footer-newsletter-form" onSubmit={handleSubscribe}>
               <input
                 className="newsletter-input" placeholder="Enter Your Email Address" type="email" required
               />
@@ -67,6 +77,23 @@ export default function Footer() {
           <span>Privacy policy</span>
         </div>
       </div>
+      {/* Popup Message */}
+      {showMessage && (
+        <div className="subscribe-popup-overlay" onClick={() => setShowMessage(false)}>
+          <div className="subscribe-popup" onClick={(e) => e.stopPropagation()}>
+            <div className="subscribe-popup-content">
+              <svg className="subscribe-popup-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+              <h3 className="subscribe-popup-title">Thank You!</h3>
+              <p className="subscribe-popup-message">We will reach out to you soon.</p>
+              <button className="subscribe-popup-close" onClick={() => setShowMessage(false)}>
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
       <style jsx>{`
         .footer-bg {
           background: #ffffff;
@@ -376,6 +403,76 @@ export default function Footer() {
             padding-left: 0;
             margin-right: 0;
           }
+        }
+        .subscribe-popup-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.5);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 10000;
+          backdrop-filter: blur(4px);
+        }
+        .subscribe-popup {
+          background: #ffffff;
+          border-radius: 1.5rem;
+          padding: 2rem;
+          max-width: 400px;
+          width: calc(100% - 2rem);
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+          animation: popupFadeIn 0.3s ease-out;
+        }
+        @keyframes popupFadeIn {
+          from {
+            opacity: 0;
+            transform: scale(0.9) translateY(-20px);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+          }
+        }
+        .subscribe-popup-content {
+          text-align: center;
+        }
+        .subscribe-popup-icon {
+          width: 64px;
+          height: 64px;
+          color: #2565F5;
+          margin: 0 auto 1rem;
+        }
+        .subscribe-popup-title {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: #181b28;
+          margin-bottom: 0.5rem;
+          font-family: var(--font-inter);
+        }
+        .subscribe-popup-message {
+          font-size: 1rem;
+          color: #535672;
+          margin-bottom: 1.5rem;
+          font-family: var(--font-inter);
+        }
+        .subscribe-popup-close {
+          background: #2565F5;
+          color: #fff;
+          border: none;
+          border-radius: 0.75rem;
+          padding: 0.75rem 2rem;
+          font-size: 1rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background 0.2s;
+          font-family: var(--font-inter);
+          min-height: 44px;
+        }
+        .subscribe-popup-close:hover {
+          background: #194bbd;
         }
       `}</style>
     </footer>

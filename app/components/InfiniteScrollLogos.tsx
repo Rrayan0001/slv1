@@ -13,7 +13,7 @@ export default function InfiniteScrollLogos() {
   const duplicatedCompanies = [...companies, ...companies, ...companies];
 
   return (
-    <div className="w-full bg-white py-6 sm:py-8 md:py-12 lg:py-16 overflow-hidden">
+    <div className="w-full bg-white pt-0 pb-2 sm:pb-4 md:pb-6 lg:pb-8 overflow-hidden infinite-logos-section">
       <div className="relative">
         {/* Gradient overlays for fade effect */}
         <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-16 md:w-24 lg:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
@@ -33,6 +33,21 @@ export default function InfiniteScrollLogos() {
           ))}
         </div>
       </div>
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .logo-section,
+          .client-slider,
+          .clients-area,
+          .partners-wrapper,
+          .brand-section,
+          .infinite-logos-section {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+            height: auto !important;
+            min-height: 0 !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }

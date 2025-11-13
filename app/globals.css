@@ -111,3 +111,49 @@ p {
 .animate-scroll-marquee-reverse {
   animation: scroll-marquee-reverse 25s linear infinite;
 }
+
+/* Comprehensive mobile gap fix - removes white gaps between sections */
+@media (max-width: 768px) {
+  /* Remove bottom spacing from slideshow/hero sections */
+  .hero,
+  .hero-section,
+  .slideshow,
+  .slideshow-section,
+  .main-slideshow-container,
+  .slideshow-wrapper,
+  .slideshow-container {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Remove top spacing from logo section ONLY (not experience section) */
+  .logo-section-wrapper {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  
+  .infinite-logos-section {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* Hide empty logo-section-wrapper divs (ghost elements causing white gap) */
+  .logo-section-wrapper:empty {
+    display: none !important;
+  }
+
+  /* Also target any div with logo-section-wrapper that has w-full bg-white and padding but is empty */
+  div.logo-section-wrapper.w-full.bg-white:empty {
+    display: none !important;
+  }
+}
+
+/* Hide empty experience-section divs globally (ghost elements causing white gap) */
+.experience-section:empty {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+}

@@ -292,15 +292,20 @@ export default function ServicesCards() {
 
                   {/* CTA Button */}
                   <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-gray-200">
-                    <button className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 bg-[#2565F5] hover:bg-[#194bbd] text-white font-semibold rounded-[40px] transition-all duration-200 shadow-[0_2px_8px_rgba(37,101,245,0.18)] hover:shadow-[0_4px_12px_rgba(37,101,245,0.3)] text-sm sm:text-base lg:text-lg w-full sm:w-fit min-h-[44px] justify-center sm:justify-start" style={{ 
-                      fontFamily: 'var(--font-montserrat)',
-                      fontWeight: 600
-                    }}>
+                    <a 
+                      href="https://wa.me/919901389430?text=Hello%2C%20I%20would%20like%20to%20get%20a%20quote%20for%20your%20services"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 bg-[#2565F5] hover:bg-[#194bbd] text-white font-semibold rounded-[40px] transition-all duration-200 shadow-[0_2px_8px_rgba(37,101,245,0.18)] hover:shadow-[0_4px_12px_rgba(37,101,245,0.3)] text-sm sm:text-base lg:text-lg w-full sm:w-fit min-h-[44px] justify-center sm:justify-start" style={{ 
+                        fontFamily: 'var(--font-montserrat)',
+                        fontWeight: 600
+                      }}
+                    >
                       Get Quote
                       <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
-                    </button>
+                    </a>
                   </div>
                 </div>
               </motion.div>

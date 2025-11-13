@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function ExperienceSection() {
   return (
-    <div className="w-full bg-white py-8 sm:py-12 md:py-16 lg:py-24 px-4 sm:px-6 lg:px-12">
+    <div className="w-full bg-white py-2 sm:py-12 md:py-16 lg:py-24 px-4 sm:px-6 lg:px-12 experience-section">
       <div className="max-w-7xl mx-auto">
         {/* Top Section */}
         <div className="mb-12 sm:mb-16 lg:mb-20">
