@@ -29,21 +29,7 @@ export default function NavigationDots({
         ))}
       </div>
 
-      {/* Mobile - Horizontal dots at the bottom */}
-      <div className="md:hidden absolute bottom-6 left-1/2 -translate-x-1/2 z-50 flex gap-2">
-        {Array.from({ length: totalSlides }).map((_, index) => (
-          <button
-            key={index}
-            onClick={() => onDotClick(index)}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              index === currentSlide
-                ? "bg-white shadow-lg scale-125 w-6"
-                : "bg-white/40"
-            }`}
-            aria-label={`Navigate to slide ${index + 1}`}
-          />
-        ))}
-      </div>
+      {/* Mobile - Hidden */}
     </>
   );
 }

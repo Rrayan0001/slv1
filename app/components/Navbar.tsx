@@ -31,24 +31,38 @@ export default function Navbar() {
           <Image src="/1.png" alt="SLV Logo" width={56} height={56} className="navbar-logo" priority />
         </div>
         {/* Hamburger Menu Button - Mobile Only */}
-        <button className="navbar-hamburger" onClick={toggleMenu} aria-label="Toggle menu">
-          <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
-          <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
-          <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
-        </button>
+        {!isMenuOpen && (
+          <button className="navbar-hamburger" onClick={toggleMenu} aria-label="Toggle menu">
+            <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
+            <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
+            <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
+          </button>
+        )}
+        {/* Close Button - Mobile Only when menu is open */}
+        {isMenuOpen && (
+          <button className="navbar-close-btn" onClick={closeMenu} aria-label="Close menu">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+        )}
         {/* Nav Links */}
         <div className={`navbar-links-wrap ${isMenuOpen ? 'mobile-open' : ''}`}>
-          <a href="/" className={`navbar-link ${isActive("/") ? "active" : ""}`} onClick={closeMenu}>
+          <a href="/" className={`navbar-link ${isMenuOpen ? 'mobile-open' : ''} ${isActive("/") ? "active" : ""}`} onClick={closeMenu}>
             HOME
           </a>
-          <a href="/services" className={`navbar-link ${isActive("/services") ? "active" : ""}`} onClick={closeMenu}>
+          <a href="/services" className={`navbar-link ${isMenuOpen ? 'mobile-open' : ''} ${isActive("/services") ? "active" : ""}`} onClick={closeMenu}>
             SERVICES
           </a>
-          <a href="/contact" className={`navbar-link ${isActive("/contact") ? "active" : ""}`} onClick={closeMenu}>
+          <a href="/contact" className={`navbar-link ${isMenuOpen ? 'mobile-open' : ''} ${isActive("/contact") ? "active" : ""}`} onClick={closeMenu}>
             CONTACT
           </a>
+          {/* CTA Button inside mobile menu */}
+          <button className="navbar-cta-mobile" onClick={closeMenu}>
+            Get In Touch <span className="cta-arrow">→</span>
+          </button>
         </div>
-        {/* Nav Right: CTA Button */}
+        {/* Nav Right: CTA Button - Desktop Only */}
         <div className={`navbar-side-wrap ${isMenuOpen ? 'mobile-open' : ''}`}>
           {/* CTA Button */}
           <button className="navbar-cta" onClick={closeMenu}>
@@ -124,19 +138,24 @@ export default function Navbar() {
         }
         .navbar-links-wrap.mobile-open {
           display: flex;
-          position: absolute;
-          top: 100%;
-          left: 0;
-          right: 0;
+          position: fixed;
+          top: calc(1rem + 80px);
+          left: 50%;
+          transform: translateX(-50%);
+          width: calc(100% - 2rem);
+          max-width: 400px;
           flex-direction: column;
-          background: rgba(255, 255, 255, 0.98);
+          background: #ffffff;
           backdrop-filter: blur(20px);
-          padding: 1.5rem;
-          margin-top: 0.5rem;
+          padding: 2rem 1.5rem;
+          margin: 0;
           border-radius: 1.5rem;
           box-shadow: 0 8px 40px rgba(0,0,0,0.15);
-          gap: 1rem;
+          gap: 0.5rem;
           z-index: 1001;
+          justify-content: flex-start;
+          max-height: calc(100vh - 120px);
+          overflow-y: auto;
         }
         .navbar-link {
           color: #181b28;
@@ -170,6 +189,17 @@ export default function Navbar() {
         .navbar-link.active {
           color: #2565F5;
         }
+        .navbar-link.mobile-open {
+          color: #181b28;
+          font-size: 1.1rem;
+          padding: 1rem 1.5rem;
+          justify-content: flex-start;
+          width: 100%;
+          border-radius: 0.5rem;
+        }
+        .navbar-link.mobile-open.active {
+          color: #2565F5;
+        }
         .navbar-side-wrap {
           display: none;
           align-items: center;
@@ -181,19 +211,62 @@ export default function Navbar() {
           }
         }
         .navbar-side-wrap.mobile-open {
+          display: none;
+        }
+        .navbar-close-btn {
           display: flex;
-          position: absolute;
-          top: calc(100% + 180px);
-          left: 0;
-          right: 0;
-          flex-direction: column;
-          background: rgba(255, 255, 255, 0.98);
-          backdrop-filter: blur(20px);
-          padding: 1.5rem;
-          margin-top: 0.5rem;
-          border-radius: 1.5rem;
-          box-shadow: 0 8px 40px rgba(0,0,0,0.15);
-          z-index: 1001;
+          align-items: center;
+          justify-content: center;
+          width: 44px;
+          height: 44px;
+          background: transparent;
+          border: 2px solid #FFA500;
+          border-radius: 0.5rem;
+          cursor: pointer;
+          z-index: 1002;
+          color: #181b28;
+          padding: 0;
+        }
+        @media (min-width: 992px) {
+          .navbar-close-btn {
+            display: none;
+          }
+        }
+        .navbar-cta-mobile {
+          background: #fff;
+          color: #0e2341;
+          border: 1px solid #e0e0e0;
+          font-weight: 700;
+          border-radius: 1.2rem;
+          padding: 1rem 1.5rem;
+          font-size: 1rem;
+          box-shadow: 0 1px 24px rgba(37,101,245,0.1);
+          display: flex;
+          align-items: center;
+          gap: 0.8em;
+          cursor: pointer;
+          transition: background 0.16s, color 0.19s;
+          min-height: 44px;
+          width: 100%;
+          justify-content: center;
+          margin-top: 1.5rem;
+        }
+        @media (min-width: 992px) {
+          .navbar-cta-mobile {
+            display: none;
+          }
+        }
+        .navbar-cta-mobile:hover {
+          background: #2565F5;
+          color: #fff;
+        }
+        .navbar-cta-mobile .cta-arrow {
+          color: #2565F5;
+          font-weight: 700;
+          margin-left: 0.31em;
+        }
+        .navbar-cta-mobile:hover .cta-arrow {
+          color: #fff;
         }
         .navbar-cta {
           background: #fff;
