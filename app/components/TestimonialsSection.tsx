@@ -81,7 +81,11 @@ export default function TestimonialsSection() {
     timeoutRef.current = setTimeout(() => {
       setActive(a => (a + 1) % testimonials.length);
     }, 7000);
-    return () => timeoutRef.current && clearTimeout(timeoutRef.current);
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
   }, [active]);
 
   function prev() {
