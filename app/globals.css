@@ -112,6 +112,52 @@ p {
   animation: scroll-marquee-reverse 25s linear infinite;
 }
 
+/* Text Animation Keyframes */
+@keyframes blur-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-blur-in-up {
+  animation: blur-in-up 0.3s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s ease-out forwards;
+}
+
 /* Comprehensive mobile gap fix - removes white gaps between sections */
 @media (max-width: 768px) {
   /* Remove bottom spacing from slideshow/hero sections */

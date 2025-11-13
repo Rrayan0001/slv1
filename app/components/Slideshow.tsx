@@ -9,6 +9,8 @@ interface Slide {
   backgroundImage: string;
   tag: string;
   headline: string;
+  headlineWhite: string;
+  headlineBlue: string;
   subtitle: string;
 }
 
@@ -17,21 +19,27 @@ const slides: Slide[] = [
         id: 1,
         backgroundImage: "/s3.png",
         tag: "DEDICATED CARGO SPECIALISTS",
-        headline: "Delivering Logistics Solutions With Precision & Care",
+        headline: "Your cargo our commitment",
+        headlineWhite: "Your cargo our ",
+        headlineBlue: "commitment",
         subtitle: "Precision-engineered freight and warehousing for enterprises across India. Trusted by India's Top Enterprises since 2005.",
       },
       {
         id: 2,
         backgroundImage: "/s1.png",
         tag: "INDIA'S TRUSTED CARGO EXPERTS",
-        headline: "On Time, Every Time",
+        headline: "Driven by commitment delivered with care",
+        headlineWhite: "Driven by commitment delivered ",
+        headlineBlue: "with care",
         subtitle: "Professional cargo transportation nationwide. 18+ years of experience delivering excellence with 98% on-time delivery rate.",
       },
       {
         id: 3,
         backgroundImage: "/s4.png",
         tag: "YOUR TRUSTED LOGISTICS PARTNER",
-        headline: "Complete Logistics Solutions for Your Business",
+        headline: "We deliver more than packages-we deliver promise",
+        headlineWhite: "We deliver more than packages-we deliver ",
+        headlineBlue: "promise",
         subtitle: "From logistics and cargo moving to packing and end-to-end delivery – we provide comprehensive cargo solutions tailored to your needs.",
       },
     ];
@@ -85,24 +93,21 @@ export default function Slideshow() {
                     <AnimatePresence mode="wait">
                       <motion.h1
                         key={`headline-${slide.id}-${currentSlide}`}
-                        initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: -20, scale: 0.95 }}
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
-                        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold leading-[1.2] tracking-tight" 
+                        className="font-bold leading-[1.2] tracking-tight text-[2.25rem] sm:text-[2.8125rem] md:text-[3.375rem] lg:text-[4.5rem] xl:text-[5.625rem] 2xl:text-[6.75rem]" 
                         style={{ 
                           fontFamily: 'var(--font-poppins), sans-serif',
                           fontWeight: 700,
-                          background: 'linear-gradient(135deg, #2565F5 0%, #ffffff 100%)',
-                          WebkitBackgroundClip: 'text',
-                          WebkitTextFillColor: 'transparent',
-                          backgroundClip: 'text',
-                          textShadow: '0 2px 8px rgba(0,0,0,0.3)',
+                          color: '#ffffff',
                           letterSpacing: '0.5px',
-                          filter: 'drop-shadow(0 2px 4px rgba(255,255,255,0.3))'
+                          textShadow: 'none'
                         }}
                       >
-                        {slide.headline}
+                        <span style={{ color: '#ffffff' }}>{slide.headlineWhite}</span>
+                        <span style={{ color: '#2944F3' }}>{slide.headlineBlue}</span>
                       </motion.h1>
                     </AnimatePresence>
                   </div>
