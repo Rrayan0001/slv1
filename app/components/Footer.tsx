@@ -20,7 +20,9 @@ export default function Footer() {
         <div className="footer-row newsletter-row">
           <div className="footer-left-world">
             <div className="footer-logo-wrap">
-              <Image src="/1.png" alt="SLV Cargo Movers and Packers Logo" width={200} height={80} className="footer-logo" priority />
+              <div className="footer-logo-container">
+                <Image src="/1.png" alt="SLV Cargo Movers and Packers Logo" width={200} height={80} className="footer-logo" priority />
+              </div>
               <div className="ml-0 sm:ml-4 flex flex-col">
                 <p className="text-white text-xs sm:text-sm font-semibold mb-1" style={{ fontFamily: 'var(--font-inter)' }}>
                   CARGO MOVERS AND PACKERS
@@ -164,6 +166,27 @@ export default function Footer() {
             margin-bottom: 1.5rem;
             flex-wrap: nowrap;
             gap: 0;
+          }
+        }
+        .footer-logo-container {
+          background: #ffffff;
+          border-radius: 0.75rem;
+          padding: 0.75rem 1rem;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        @media (min-width: 640px) {
+          .footer-logo-container {
+            padding: 0.875rem 1.25rem;
+            border-radius: 1rem;
+          }
+        }
+        @media (min-width: 768px) {
+          .footer-logo-container {
+            padding: 1rem 1.5rem;
+            border-radius: 1.25rem;
           }
         }
         .footer-logo {

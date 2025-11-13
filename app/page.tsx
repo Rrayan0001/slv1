@@ -34,7 +34,17 @@ export default function Home() {
           .slideshow-wrapper,
           .slideshow-container {
             margin-bottom: 0 !important;
-            padding-bottom: 0 !important;
+          }
+          .main-slideshow-container {
+            min-height: auto !important;
+            height: auto !important;
+          }
+          .infinite-logos-section {
+            margin-bottom: 0 !important;
+            margin-top: 0 !important;
+          }
+          .experience-section {
+            margin-top: 0 !important;
           }
         }
       `}</style>
