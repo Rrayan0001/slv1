@@ -121,7 +121,7 @@ export default function LogisticsServices() {
               {services.map((service, idx) => (
                 <motion.div
                   key={service.key}
-                  ref={(el) => (itemRefs.current[idx] = el)}
+                  ref={(el) => { itemRefs.current[idx] = el; }}
                   className={`relative z-10 flex items-center bg-transparent px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 rounded-xl cursor-pointer mb-2 sm:mb-3 md:mb-4 select-none ${
                     hovered.key === service.key ? "text-gray-900" : "text-[#23244a]"
                   }`}
