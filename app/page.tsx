@@ -17,7 +17,7 @@ export default function Home() {
       <Navbar />
 
       {/* Main Container with Rounded Corners and Shadow */}
-      <main className="relative min-h-screen bg-white rounded-none sm:rounded-xl lg:rounded-[2rem] shadow-none sm:shadow-[0_20px_60px_rgba(0,0,0,0.3)] border-0 sm:border-2 border-white/50 mx-0 sm:mx-2 lg:mx-4 my-0 sm:my-2 lg:my-4 xl:my-6 max-w-[1920px] overflow-hidden main-slideshow-container">
+      <main className="relative min-h-screen bg-white rounded-none sm:rounded-xl lg:rounded-[2rem] shadow-none sm:shadow-[0_20px_60px_rgba(0,0,0,0.3)] border-0 sm:border-2 border-white/50 mx-0 sm:mx-2 lg:mx-4 mt-8 sm:mt-6 lg:mt-4 xl:mt-2 mb-0 sm:mb-2 lg:mb-4 xl:mb-6 max-w-[1920px] overflow-hidden main-slideshow-container">
         {/* Slideshow Component - Each image in its own slide */}
         <Slideshow />
       </main>

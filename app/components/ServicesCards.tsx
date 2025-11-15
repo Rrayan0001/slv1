@@ -18,117 +18,122 @@ type Service = {
 
 const services: Service[] = [
   {
-    key: "logistics",
-    title: "Logistics Orchestration",
-    subtitle: "01 LOGISTICS",
-    img: "/image.png",
+    key: "express-parcel",
+    title: "Express Parcel",
+    subtitle: "01 EXPRESS",
+    img: "/Express_Parcel.png",
     details: {
-      description: "End-to-end logistics with assured schedules, live tracking, and accountable teams. Precision-engineered freight and warehousing for enterprises across India.",
+      description:
+        "Time-sensitive parcel movement with nationwide reach, same-day dispatch windows, and proactive alerts so your customers know exactly when to expect delivery.",
       features: [
-        "End-to-end logistics management",
-        "Domestic coverage focused on cities",
-        "Efficient route planning",
-        "Real-time shipment tracking",
-        "Professional handling and care",
-        "Flexible scheduling"
+        "Dedicated express fleet with preferred routes",
+        "Secure packaging and tamper-proof sealing",
+        "Live status notifications via SMS/WhatsApp",
+        "Doorstep pickup and delivery",
+        "Cash-on-delivery and POD support",
+        "Serviceable to metro and tier-2/3 locations"
       ],
       benefits: [
-        "Assured delivery schedules",
-        "Live tracking visibility",
-        "Accountable professional teams",
-        "Enterprise-grade solutions"
+        "Lightning-fast parcel movement",
+        "Lower failed delivery attempts",
+        "Better customer experience",
+        "Higher reliability for eCommerce brands"
       ]
     }
   },
   {
-    key: "cargo",
-    title: "Cargo Movers",
-    subtitle: "02 CARGO",
-    img: "/image1.png",
+    key: "warehousing",
+    title: "Warehousing",
+    subtitle: "02 WAREHOUSING",
+    img: "/Warehousing.png",
     details: {
-      description: "Reliable cargo moving services ensuring safe and timely transportation of your goods with professional handling. Professional cargo transportation nationwide.",
+      description:
+        "Modern multi-city warehouses with 24/7 security, WMS visibility, and value-added services like kitting, labeling, and inventory health tracking.",
       features: [
-        "Safe cargo transportation",
-        "Professional handling",
-        "Timely delivery",
-        "Insurance coverage options",
-        "Expert drivers and crew",
-        "Vehicle tracking system"
+        "Ambient and temperature-controlled options",
+        "WMS with cycle-counting and batch tracking",
+        "Dedicated loading bays and dock management",
+        "Integrated packing/labeling stations",
+        "Fire safety and CCTV surveillance",
+        "Flexible storage terms (short or long stay)"
       ],
       benefits: [
-        "98% on-time delivery rate",
-        "Secure handling",
-        "Professional service",
-        "Nationwide coverage"
+        "Optimized inventory turns",
+        "Lower shrinkage and pilferage",
+        "Scalable storage footprint",
+        "Ready for omnichannel fulfillment"
       ]
     }
   },
   {
-    key: "packers",
-    title: "Packers",
-    subtitle: "03 PACKING",
-    img: "/image2.png",
+    key: "part-truckload",
+    title: "Part Truckload",
+    subtitle: "03 PTL",
+    img: "/Part_Truckload.png",
     details: {
-      description: "Expert packing services to ensure your goods are protected and secure during transit with quality materials and techniques. Professional packaging solutions.",
+      description:
+        "Economical line-haul for shipments that don’t fill an entire truck. Consolidated routes and shared capacity ensure predictable departures and costs.",
       features: [
-        "Professional packing services",
-        "Quality packing materials",
-        "Secure packaging techniques",
-        "Item protection and safety",
-        "Custom packing solutions",
-        "Fragile item handling"
+        "Scheduled departures across major lanes",
+        "Barcode-based bagging and tracking",
+        "Hub-and-spoke consolidation",
+        "Flexible weight/volume slabs",
+        "Damage-proof handling protocols",
+        "COD and reverse logistics support"
       ],
       benefits: [
-        "Maximum protection",
-        "Quality materials",
-        "Expert techniques",
-        "Customized solutions"
+        "Pay only for the space you use",
+        "Consistent transit times",
+        "Lower logistics spend for SMEs",
+        "Visibility from pickup to delivery"
       ]
     }
   },
   {
-    key: "delivery",
-    title: "End-to-End Delivery",
-    subtitle: "04 DELIVERY",
-    img: "/image3.png",
+    key: "full-truckload",
+    title: "Full Truckload",
+    subtitle: "04 FTL",
+    img: "/Full_Truckload.png",
     details: {
-      description: "Complete door-to-door delivery service handling everything from pickup to final delivery at your destination. Full logistics management from start to finish.",
+      description:
+        "Dedicated trucks tailored to your commodity, route, and compliance requirements. Ideal for high-volume movements needing speed, security, and zero touchpoints.",
       features: [
-        "Pickup from your location",
-        "Secure transportation",
-        "Door-to-door delivery",
-        "Full logistics management",
-        "End-to-end tracking",
-        "Delivery confirmation"
+        "Pan-India fleet with GPS monitoring",
+        "Single and multi-axle configurations",
+        "Door-to-door route optimization",
+        "Dedicated drivers and escort options",
+        "E-way bill and document management",
+        "Real-time milestone reporting"
       ],
       benefits: [
-        "Complete service",
-        "No hassle for you",
-        "Full visibility",
-        "Guaranteed delivery"
+        "Shortest transit cycles",
+        "End-to-end control and accountability",
+        "Reduced handling risks",
+        "Customizable SLAs per shipment"
       ]
     }
   },
   {
-    key: "freight",
-    title: "Freight Movers",
-    subtitle: "05 FREIGHT",
-    img: "/image4.png",
+    key: "cross-border",
+    title: "Cross Border",
+    subtitle: "05 CROSS BORDER",
+    img: "/Cross_Border.png",
     details: {
-      description: "Efficient freight moving services for commercial and industrial shipments with specialized handling equipment. Perfect for enterprise and industrial cargo needs.",
+      description:
+        "International freight solutions covering road, air, and multimodal corridors with customs brokerage, trade compliance, and last-mile delivery partnerships.",
       features: [
-        "Commercial freight services",
-        "Industrial shipments",
-        "Heavy cargo handling",
-        "Specialized equipment",
-        "Bulk freight solutions",
-        "Flexible freight options"
+        "Dedicated cross-border operations desk",
+        "Customs filing, duty payments, and documentation",
+        "Bonded warehousing and FTWZ options",
+        "Consolidation hubs at key gateways",
+        "Multi-currency billing and insurance",
+        "Delivery across SAARC and Middle East lanes"
       ],
       benefits: [
-        "Specialized handling",
-        "Industrial expertise",
-        "Heavy cargo capability",
-        "Enterprise solutions"
+        "Simplified international shipping",
+        "Regulatory compliance handled for you",
+        "Reduced dwell times at borders",
+        "Single partner for door-to-door exports/imports"
       ]
     }
   },

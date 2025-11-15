@@ -1,97 +1,138 @@
 "use client";
 
-// components/ProcessSection.tsx
-
 import React from "react";
 import { motion } from "framer-motion";
 
 const Steps = [
   {
     key: "quote",
-    title: "Request Quote",
-    subtitle: "Step 01",
+    title: "Request a Quote",
     description:
-      "Contact us with your shipment details including pickup location, delivery address, item description, weight/volume, and preferred date/time.",
+      "Provide shipment details, pickup and delivery locations, cargo description, and preferred schedule for a fast response.",
     icon: (
-      <svg width="68" height="68" viewBox="0 0 68 68" fill="none">
-        <circle cx="34" cy="34" r="32" fill="#2565F5" />
-        <rect x="22" y="28" width="24" height="18" rx="5" fill="#fff" />
-        <rect x="30" y="34" width="8" height="9" rx="2" fill="#2565F5" />
-        {/* Dot line crosshairs */}
-        <circle cx="34" cy="34" r="29" stroke="#2565F5" strokeDasharray="3 6" strokeWidth="3"/>
-        {/* Small bag icon */}
-        <rect x="31" y="32" width="6" height="5" rx="1.5" fill="#2565F5"/>
-        <path d="M34 32v-3" stroke="#2565F5" strokeWidth="2" strokeLinecap="round" />
+      <svg
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-8 h-8 text-white"
+      >
+        <path
+          d="M8 9h16M8 15h12M8 21h7"
+          stroke="currentColor"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+        />
+        <path
+          d="M6 6h20a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z"
+          stroke="currentColor"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </svg>
     ),
   },
   {
     key: "plan",
-    title: "Get Customized Plan",
-    subtitle: "Step 02",
+    title: "Receive a Tailored Logistics Plan",
     description:
-      "We provide a tailored logistics solution with pricing based on your goods and requirements. Get professional advice with no obligation.",
+      "Get a customized logistics plan with transparent pricing, expert recommendations, and a no-obligation consultation.",
     icon: (
-      <svg width="68" height="68" viewBox="0 0 68 68" fill="none">
-        <circle cx="34" cy="34" r="32" fill="#2565F5" />
-        {/* Warehouse icon */}
-        <rect x="22" y="36" width="24" height="10" rx="2" fill="#fff" />
-        <polygon points="20,36 34,22 48,36" fill="#fff" />
-        {/* Doors as lines */}
-        <rect x="29" y="37" width="2.5" height="7" rx="1.2" fill="#2565F5"/>
-        <rect x="36.5" y="37" width="2.5" height="7" rx="1.2" fill="#2565F5"/>
+      <svg
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-8 h-8 text-white"
+      >
+        <path
+          d="M6 10h20M6 16h20M6 22h11"
+          stroke="currentColor"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+        />
+        <rect
+          x="4"
+          y="6"
+          width="24"
+          height="20"
+          rx="3"
+          stroke="currentColor"
+          strokeWidth="2.2"
+        />
       </svg>
     ),
   },
   {
     key: "pickup",
     title: "Schedule Pickup",
-    subtitle: "Step 03",
     description:
-      "Arrange pickup at your location at a convenient time that works for you. Our professional team handles everything from packing to loading.",
+      "Choose a pickup time that suits your operations. Our trained crew handles packing, loading, and documentation precisely.",
     icon: (
-      <svg width="68" height="68" viewBox="0 0 68 68" fill="none">
-        <circle cx="34" cy="34" r="32" fill="#2565F5" />
-        {/* Package icon */}
-        <rect x="30" y="29" width="8" height="12" rx="2" fill="#fff" />
-        <rect x="32" y="31" width="4" height="8" rx="1.2" fill="#2565F5"/>
-        {/* arrows for distribution */}
-        <path d="M38,39 l8,0 m-2,-2 l2,2 l-2,2" stroke="#2565F5" strokeWidth="2" strokeLinecap="round" fill="none"/>
-        <path d="M30,39 l-8,0 m2,-2 l-2,2 l2,2" stroke="#2565F5" strokeWidth="2" strokeLinecap="round" fill="none"/>
+      <svg
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-8 h-8 text-white"
+      >
+        <path
+          d="M11 22h-3a2 2 0 0 1-2-2v-4h5m0 6h11m-11 0v3m11-3h3.5a1.5 1.5 0 0 0 1.5-1.5V15h-5m0 7v3m-11-9h11V9H11v9Z"
+          stroke="currentColor"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </svg>
     ),
   },
   {
     key: "track",
     title: "Track & Monitor",
-    subtitle: "Step 04",
     description:
-      "Monitor your shipment as it moves through our logistics network. Real-time tracking keeps you informed every step of the way.",
+      "Stay updated from dispatch to delivery with real-time tracking and milestone alerts across our logistics network.",
     icon: (
-      <svg width="68" height="68" viewBox="0 0 68 68" fill="none">
-        <circle cx="34" cy="34" r="32" fill="#2565F5" />
-        {/* Truck icon */}
-        <rect x="25" y="34" width="18" height="9" rx="2" fill="#fff" />
-        <rect x="40" y="29" width="8" height="7" rx="2" fill="#2565F5" />
-        <circle cx="30" cy="44" r="3" fill="#2565F5" />
-        <circle cx="44" cy="44" r="3" fill="#2565F5" />
-        {/* Checkmark */}
-        <path d="M43 33 l2 2 l3 -3" stroke="#fff" strokeWidth="2" strokeLinecap="round" fill="none" />
+      <svg
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-8 h-8 text-white"
+      >
+        <path
+          d="M8 14a8 8 0 1 1 16 0c0 6-8 12-8 12s-8-6-8-12Z"
+          stroke="currentColor"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <circle cx="16" cy="14" r="2.5" stroke="currentColor" strokeWidth="2" />
       </svg>
     ),
   },
   {
     key: "delivery",
-    title: "Safe Delivery",
-    subtitle: "Step 05",
+    title: "Safe & Timely Delivery",
     description:
-      "Your cargo is delivered safely to the destination with confirmation. We ensure professional handling and on-time delivery every time.",
+      "Your cargo reaches the destination safely and on schedule with immediate delivery confirmation and careful handling.",
     icon: (
-      <svg width="68" height="68" viewBox="0 0 68 68" fill="none">
-        <circle cx="34" cy="34" r="32" fill="#2565F5" />
-        {/* Delivery/Checkmark icon */}
-        <circle cx="34" cy="34" r="12" fill="#fff" />
-        <path d="M30 34 l3 3 l6 -6" stroke="#2565F5" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+      <svg
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-8 h-8 text-white"
+      >
+        <path
+          d="M6 18v-7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v13H8a2 2 0 0 1-2-2Zm15 0h3l4 5v3h-7V18Z"
+          stroke="currentColor"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="m10 16 3 3 6-6"
+          stroke="currentColor"
+          strokeWidth="2.4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </svg>
     ),
   },
@@ -99,220 +140,41 @@ const Steps = [
 
 export default function ProcessSection() {
   return (
-    <section className="process-section">
-      <div className="header">
-        <div className="process-tag">Our Process</div>
-        <h1>
-          Let us take the stress <br />
-          out of <span className="highlight">your move.</span>
-        </h1>
+    <section className="bg-[#f9fafb] py-12 sm:py-16 lg:py-20 px-4 font-[var(--font-inter)]">
+      <div className="max-w-5xl mx-auto text-center">
+        <p className="text-xs sm:text-sm tracking-[0.3em] text-[#2565F5] uppercase font-semibold">
+          Our Process
+        </p>
+        <h2 className="mt-4 text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 leading-snug">
+          A clear, reliable workflow designed for seamless cargo movement.
+        </h2>
       </div>
-      <div className="steps-row">
-        {Steps.map((step, idx) => (
+
+      <div className="mt-10 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 sm:gap-6 lg:gap-7 max-w-6xl mx-auto">
+        {Steps.map((step, index) => (
           <motion.div
             key={step.key}
-            className="step"
-            initial={{ opacity: 0, y: 32 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.33 }}
-            transition={{ duration: 0.45, delay: idx * 0.17 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.4, delay: index * 0.06 }}
+            className="bg-white rounded-2xl px-6 py-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgba(15,23,42,0.08)] hover:shadow-[0_12px_32px_rgba(15,23,42,0.12)] transition duration-200 hover:-translate-y-1.5 border border-slate-100"
           >
-            <motion.div
-              className="step-icon"
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: "spring", stiffness: 300, damping: 21 }}
-            >
+            <div className="w-20 h-20 rounded-full bg-[#2565F5] flex items-center justify-center mb-4">
               {step.icon}
-            </motion.div>
-            <motion.div
-              className="step-title"
-              whileHover={{ color: "#2565F5" }}
-              transition={{ duration: 0.2 }}
-            >
-              {step.title}
-            </motion.div>
-            <div className="step-subtitle-wrapper">
-              <motion.div
-                className="step-subtitle"
-                whileHover={{ backgroundColor: "#eaf1ff", color: "#2565F5" }}
-                transition={{ duration: 0.2 }}
-              >
-                {step.subtitle}
-              </motion.div>
-              {idx < Steps.length - 1 && <div className="divider-line" />}
             </div>
-            <div className="step-desc">{step.description}</div>
+            <p className="text-xs font-semibold tracking-[0.25em] text-[#2565F5] uppercase">
+              Step {String(index + 1).padStart(2, "0")}
+            </p>
+            <h3 className="mt-3 text-base sm:text-lg font-bold text-slate-900">
+              {step.title}
+            </h3>
+            <p className="mt-3 text-sm text-slate-500 leading-relaxed max-w-[240px]">
+              {step.description}
+            </p>
           </motion.div>
         ))}
       </div>
-      <style jsx>{`
-        .process-section {
-          background: #f6f6fa;
-          padding: 2rem 1rem 2rem 1rem;
-          text-align: center;
-        }
-        @media (min-width: 640px) {
-          .process-section {
-            padding: 3rem 1.5rem 2.5rem 1.5rem;
-          }
-        }
-        @media (min-width: 768px) {
-          .process-section {
-            padding: 4rem 2rem 2.8rem 2rem;
-          }
-        }
-        .header {
-          margin-bottom: 2.4rem;
-        }
-        .process-tag {
-          font-size: 1rem;
-          font-weight: 500;
-          color: #2565F5;
-          letter-spacing: 2px;
-          margin-bottom: 0.8rem;
-        }
-        h1 {
-          font-size: 1.75rem;
-          margin: 0.4rem 0 0.8rem 0;
-          font-weight: bold;
-          line-height: 1.2;
-          text-align: center;
-        }
-        @media (min-width: 640px) {
-          h1 {
-            font-size: 2rem;
-          }
-        }
-        @media (min-width: 768px) {
-          h1 {
-            font-size: 2.4rem;
-          }
-        }
-        .highlight {
-          color: #2565F5 !important;
-        }
-        .steps-row {
-          display: flex;
-          justify-content: center;
-          align-items: flex-start;
-          gap: 0;
-          padding-bottom: 2.2rem;
-          position: relative;
-        }
-        .step {
-          flex: 1 1 20%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          position: relative;
-          min-width: 200px;
-          padding-bottom: 0.5rem;
-          cursor: pointer;
-          transition: color 0.16s;
-        }
-        @media (min-width: 768px) {
-          .step {
-            min-width: 240px;
-          }
-        }
-        .step-icon {
-          margin-bottom: 1.3rem;
-        }
-        .step-title {
-          font-weight: 700;
-          font-size: 1rem;
-          margin-bottom: 0.55rem;
-          color: #181b28;
-          transition: color 0.16s;
-          text-align: center;
-          line-height: 1.3;
-        }
-        @media (min-width: 640px) {
-          .step-title {
-            font-size: 1.1rem;
-          }
-        }
-        @media (min-width: 768px) {
-          .step-title {
-            font-size: 1.2rem;
-          }
-        }
-        .step-subtitle-wrapper {
-          position: relative;
-          display: flex;
-          align-items: center;
-          margin-bottom: 0.69rem;
-          margin-top: 0.28rem;
-        }
-        .step-subtitle {
-          background: #fff;
-          color: #2565F5;
-          font-size: 1.09rem;
-          font-weight: 600;
-          padding: 0.3rem 1.2rem;
-          border-radius: 12px;
-          border: 2px solid #2565F5;
-          box-shadow: 0 2px 12px rgba(37,101,245,0.06);
-          transition: background 0.16s, color 0.16s;
-          white-space: nowrap;
-        }
-        .divider-line {
-          position: absolute;
-          left: 100%;
-          top: 50%;
-          width: calc((100% - 240px * 4) / 3);
-          max-width: 150px;
-          height: 2px;
-          border-top: 2px dotted #d8e3fd;
-          transform: translateY(-50%);
-        }
-        .step-desc {
-          color: #868899;
-          font-size: 0.875rem;
-          margin-top: 0.4rem;
-          max-width: 240px;
-          line-height: 1.6;
-          text-align: center;
-          padding: 0 0.5rem;
-        }
-        @media (min-width: 640px) {
-          .step-desc {
-            font-size: 0.9375rem;
-          }
-        }
-        @media (min-width: 768px) {
-          .step-desc {
-            font-size: 1rem;
-          }
-        }
-        .divider {
-          display: none;
-        }
-        @media (max-width: 992px) {
-          .steps-row {
-            flex-direction: column;
-            border-bottom: none;
-            gap: 2rem;
-          }
-          .step {
-            min-width: unset;
-            width: 100%;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px dotted #d8e3fd;
-            padding-bottom: 1.5rem;
-          }
-          .step:last-child { 
-            border-bottom: none;
-            margin-bottom: 0;
-          }
-          .divider-line {
-            display: none;
-          }
-        }
-        @media (max-width: 1200px) and (min-width: 993px) {
-          .step { min-width: 180px; }
-        }
-      `}</style>
     </section>
   );
 }

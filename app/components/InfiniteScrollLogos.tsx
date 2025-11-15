@@ -7,7 +7,7 @@ const companies = [
   { name: "Aditya Birla Fashion and Retail", logo: "/Aditya Birla Fashion and Retail.png" },
   { name: "BOSCH", logo: "/BOSCH.png" },
   { name: "MAHINDRA LOGISTICS", logo: "/MAHINDRA LOGISTICS.png" },
-  { name: "FEL", logo: "/FEL.png" },
+  { name: "FSC", logo: "/FSC.jpg" },
   { name: "RIVIGO", logo: "/RIVIGO.png" },
 ];
 

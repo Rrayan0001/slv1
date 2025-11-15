@@ -13,34 +13,34 @@ type Service = {
 
 const services: Service[] = [
   {
-    key: "logistics",
-    title: "Logistics Orchestration",
-    subtitle: "Logistics",
-    img: "/image.png",
+    key: "express",
+    title: "Express Parcel",
+    subtitle: "Express",
+    img: "/Express_Parcel.png",
   },
   {
-    key: "cargo",
-    title: "Cargo Movers",
-    subtitle: "Cargo",
-    img: "/image1.png",
+    key: "warehousing",
+    title: "Warehousing",
+    subtitle: "Storage",
+    img: "/Warehousing.png",
   },
   {
-    key: "packers",
-    title: "Packers",
-    subtitle: "Packing",
-    img: "/image2.png",
+    key: "part-truckload",
+    title: "Part Truckload",
+    subtitle: "PTL",
+    img: "/Part_Truckload.png",
   },
   {
-    key: "delivery",
-    title: "End-to-End Delivery",
-    subtitle: "Delivery",
-    img: "/image3.png",
+    key: "full-truckload",
+    title: "Full Truckload",
+    subtitle: "FTL",
+    img: "/Full_Truckload.png",
   },
   {
-    key: "freight",
-    title: "Freight Movers",
-    subtitle: "Freight",
-    img: "/image4.png",
+    key: "cross-border",
+    title: "Cross Border",
+    subtitle: "International",
+    img: "/Cross_Border.png",
   },
 ];
 
@@ -76,7 +76,7 @@ export default function LogisticsServices() {
               Logistics Solution <br className="hidden sm:block" /> and <span className="text-[#2565F5]">Services</span>
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-[#535672] mb-4 sm:mb-6 md:mb-8 max-w-lg" style={{ fontFamily: 'var(--font-inter)' }}>
-              From logistics and cargo moving to packing and end-to-end delivery – we provide comprehensive cargo solutions tailored to your needs. Get a personalized plan and timeline—professional advice, no obligation.
+              Express parcel, warehousing, PTL, FTL, and cross-border logistics under one roof. We tailor the mode, fleet, and storage mix to your cargo so you get speed, visibility, and reliability every mile.
             </p>
             
             {/* Image Box */}
