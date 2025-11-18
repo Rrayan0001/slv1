@@ -86,23 +86,23 @@ export default function Navbar() {
       <style jsx>{`
         .navbar-outer {
           position: fixed;
-          top: 1rem;
-          left: 50%;
-          transform: translateX(-50%);
-          width: calc(100% - 2rem);
-          max-width: 1920px;
+          top: 0;
+          left: 0;
+          right: 0;
+          width: 100%;
+          max-width: 100%;
           background: rgba(255, 255, 255, 0.95);
           backdrop-filter: blur(10px);
           box-shadow: 0 8px 40px rgba(0,0,0,0.1);
-          border-radius: 1.5rem;
+          border-radius: 0;
           z-index: 1000;
           overflow: visible;
         }
         @media (min-width: 768px) {
           .navbar-outer {
-            top: 1.5rem;
-            width: calc(100% - 4rem);
-            border-radius: 2.1rem;
+            top: 0;
+            width: 100%;
+            border-radius: 0;
           }
         }
         .navbar-inner {
@@ -156,7 +156,7 @@ export default function Navbar() {
         .navbar-links-wrap.mobile-open {
           display: flex;
           position: fixed;
-          top: calc(1rem + 80px);
+          top: 80px;
           left: 50%;
           transform: translateX(-50%);
           width: calc(100% - 2rem);
